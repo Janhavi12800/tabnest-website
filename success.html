@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thanks for buying TabNest Pro 🪺</title>
+  <link rel="icon" href="assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-decor">
+    <svg class="leaf leaf-1" viewBox="0 0 60 60"><path d="M30 5 C 15 15 10 35 30 55 C 50 35 45 15 30 5 Z" fill="currentColor"/></svg>
+    <svg class="leaf leaf-2" viewBox="0 0 60 60"><path d="M30 5 C 15 15 10 35 30 55 C 50 35 45 15 30 5 Z" fill="currentColor"/></svg>
+    <svg class="leaf leaf-3" viewBox="0 0 60 60"><path d="M30 5 C 15 15 10 35 30 55 C 50 35 45 15 30 5 Z" fill="currentColor"/></svg>
+  </div>
+
+  <header class="topbar">
+    <a class="logo" href="index.html">
+      <img src="assets/icon.png" alt="TabNest" width="36" height="36">
+      <span>TabNest</span>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="success-card">
+      <div class="success-emoji">🪺</div>
+      <h2>Welcome to TabNest Pro!</h2>
+
+      <div id="instant-banner" class="instant-banner" style="display:none">
+        <div class="dot-pulse"></div>
+        <div>
+          <strong>Activating in your extension…</strong>
+          <span>Switch back to your TabNest tab — Pro will unlock by itself in a few seconds.</span>
+        </div>
+      </div>
+
+      <p>We've also emailed a 6-digit activation code to <span class="email-hl" id="email-out">your email</span> in case you need to sign in on another browser later.</p>
+
+      <div class="steps">
+        <h2 style="margin-top: 0; font-family: 'Caveat', cursive; font-size: 28px;">If activation doesn't happen automatically:</h2>
+        <ol>
+          <li>Open the <strong>TabNest extension</strong> in Chrome.</li>
+          <li>Open the dashboard <strong>⛶</strong> → settings <strong>⚙️</strong>.</li>
+          <li>Scroll to <strong>TabNest Pro</strong> → <strong>Already paid? Sign in</strong>.</li>
+          <li>Paste your email and the 6-digit code from the email.</li>
+        </ol>
+      </div>
+
+      <p style="font-size: 13px; color: var(--text-light); margin-top: 20px;">
+        Payment ID: <code id="pid-out" style="background: var(--bg-accent); padding: 2px 8px; border-radius: 6px; font-family: monospace;">—</code>
+        <br>Save this in case you ever need support.
+      </p>
+    </div>
+
+    <p style="text-align: center; margin-top: 24px;">
+      Need help? Email <a href="mailto:support@tabnest.app">support@tabnest.app</a> with your payment ID.
+    </p>
+
+    <div style="text-align: center; margin-top: 28px;">
+      <a href="index.html" class="cta ghost">← Back to home</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-row">
+      <div><strong>🪺 TabNest</strong> — a quiet place for your tabs.</div>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="https://github.com/Janhavi12800/tabnest" target="_blank" rel="noopener">Source</a>
+      </div>
+    </div>
+    <div class="footer-bottom">Made with 🪶 in India</div>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const email = params.get('email');
+    const pid = params.get('pid');
+    const from = params.get('from');
+    if (email) document.getElementById('email-out').textContent = email;
+    if (pid) document.getElementById('pid-out').textContent = pid;
+    if (from === 'extension') {
+      document.getElementById('instant-banner').style.display = 'flex';
+    }
+  </script>
+</body>
+</html>

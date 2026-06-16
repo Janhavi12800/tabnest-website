@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TabNest — A cozy home for your tabs</title>
+  <meta name="description" content="A beautifully organised Chrome tab manager. Auto-groups tabs into smart nests, saves workspaces, and helps you focus. ₹100 one-time for Pro.">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <meta property="og:title" content="TabNest — A cozy home for your tabs">
+  <meta property="og:description" content="Auto-organise every tab into beautiful smart nests. Workspaces, focus mode, themes.">
+  <meta property="og:image" content="assets/icon-large.png">
+</head>
+<body>
+  <div class="bg-decor">
+    <svg class="leaf leaf-1" viewBox="0 0 60 60"><path d="M30 5 C 15 15 10 35 30 55 C 50 35 45 15 30 5 Z" fill="currentColor"/></svg>
+    <svg class="leaf leaf-2" viewBox="0 0 60 60"><path d="M30 5 C 15 15 10 35 30 55 C 50 35 45 15 30 5 Z" fill="currentColor"/></svg>
+    <svg class="leaf leaf-3" viewBox="0 0 60 60"><path d="M30 5 C 15 15 10 35 30 55 C 50 35 45 15 30 5 Z" fill="currentColor"/></svg>
+    <svg class="leaf leaf-4" viewBox="0 0 60 60"><path d="M30 5 C 15 15 10 35 30 55 C 50 35 45 15 30 5 Z" fill="currentColor"/></svg>
+  </div>
+
+  <header class="topbar">
+    <a class="logo" href="#">
+      <img src="assets/icon.png" alt="TabNest" width="36" height="36">
+      <span>TabNest</span>
+    </a>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-emoji">🪺</div>
+      <h1 class="title">A cozy home for your tabs.</h1>
+      <p class="subtitle">TabNest auto-organises every tab into beautiful smart nests so you can actually find what you opened.</p>
+      <div class="trial-pitch">🎁 <strong>7 days free</strong> · then <strong>₹100 lifetime</strong> · no subscription</div>
+      <div class="cta-row">
+        <a class="cta primary" href="#pricing">Start 7-day free trial</a>
+        <a class="cta ghost" href="#features">See what it does →</a>
+      </div>
+      <div class="hero-screenshot">
+        <div class="screenshot-frame">
+          <div class="dots-frame"><span></span><span></span><span></span></div>
+          <iframe class="screenshot-iframe" src="preview.html" loading="lazy" title="TabNest dashboard preview"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <h2 class="section-title caveat">Everything you'd want from a tab nest</h2>
+      <div class="feature-grid">
+        <div class="feature">
+          <div class="feature-icon">🪺</div>
+          <h3>Auto-nesting</h3>
+          <p>Every tab tucks into a smart group — Code, Learning, Media, Work, AI, and more — the moment it opens.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🎯</div>
+          <h3>Custom nests <span class="pro-pill">PRO</span></h3>
+          <p>Make your own categories. "Side project," "Recipes," "Wedding planning" — anything you organise by.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">⏰</div>
+          <h3>Focus mode <span class="pro-pill">PRO</span></h3>
+          <p>Hide distracting nests during a 25-min Pomodoro. Your dashboard quiets down so you can think.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🌿</div>
+          <h3>Workspaces</h3>
+          <p>Save the full set of tabs as "Monday morning" or "Thesis research". Restore any of them with one click.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📝</div>
+          <h3>Tab notes <span class="pro-pill">PRO</span></h3>
+          <p>Stick a note to any tab — "waiting on Sarah's reply" — so you remember why it's open.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🎨</div>
+          <h3>Cozy themes <span class="pro-pill">PRO</span></h3>
+          <p>Forest, Sunset, Midnight, Cherry Blossom. Match TabNest to your mood, dark mode included.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">✂️</div>
+          <h3>Dedupe & sweep</h3>
+          <p>One click closes duplicate tabs. Another closes tabs you haven't touched in a day.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">💾</div>
+          <h3>Export everything</h3>
+          <p>Your workspaces and nests export to JSON. Your data lives on your machine — never on a server.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">⚡</div>
+          <h3>Native to Chrome</h3>
+          <p>Uses Chrome's own tab groups, so even Chrome itself shows your nests right in the tab bar.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+      <h2 class="section-title caveat">7 days free, then one tiny price.</h2>
+      <div class="pricing-card">
+        <div class="pricing-head">
+          <div class="pricing-logo">🪺</div>
+          <div>
+            <div class="pricing-name">TabNest <span class="pro-badge">PRO</span></div>
+            <div class="pricing-desc">7-day trial · ₹100 lifetime · no subscription</div>
+          </div>
+        </div>
+        <div class="pricing-row">
+          <div class="pricing-amount">
+            <span class="rupee">₹</span><span class="amount">100</span>
+            <span class="pricing-period">one-time</span>
+          </div>
+          <ul class="pricing-list">
+            <li>🎨 All 4 themes</li>
+            <li>🎯 Unlimited custom nests</li>
+            <li>📝 Unlimited tab notes</li>
+            <li>⏰ Focus mode + Pomodoro</li>
+            <li>✨ Hero "PRO" badge</li>
+            <li>💝 Lifetime updates</li>
+          </ul>
+        </div>
+        <div class="buy-form">
+          <input type="email" id="buyer-email" placeholder="your email address" autocomplete="email" />
+          <button class="cta primary buy-btn" id="buy-btn">Buy Pro — ₹100</button>
+        </div>
+        <div id="status" class="buy-status"></div>
+        <div class="pricing-fine">
+          We send your activation code to this email. No account, no password.<br>
+          Pay securely with Razorpay (UPI / Card / Netbanking).
+        </div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <h2 class="section-title caveat">Questions you might have</h2>
+      <details>
+        <summary>How does the 7-day trial work?</summary>
+        <p>Install TabNest, enter your email, paste the 6-digit code we send you. That's it — every feature is unlocked for 7 days. No credit card required upfront.</p>
+      </details>
+      <details>
+        <summary>Is it really a one-time payment?</summary>
+        <p>Yes. ₹100 once, Pro stays unlocked forever, on as many of your own browsers as you sign in to with the same email.</p>
+      </details>
+      <details>
+        <summary>Can I use it on multiple computers?</summary>
+        <p>Yes. Sign in with the same email and code on each browser/device.</p>
+      </details>
+      <details>
+        <summary>Can I switch my account to a different email later?</summary>
+        <p>Yes. In Settings → TabNest Pro → switch account. The trial or Pro state moves to the new email — no trial reset.</p>
+      </details>
+      <details>
+        <summary>What if I lose the code email?</summary>
+        <p>Search your inbox for "TabNest activation". Still nothing? Email us — we'll re-send by looking up your payment or trial.</p>
+      </details>
+      <details>
+        <summary>What data does TabNest collect?</summary>
+        <p>Everything about your tabs stays on your machine. We only store your email, a device fingerprint (for trial anti-abuse), and a 6-digit code on our server. <a href="privacy.html">Full privacy policy →</a></p>
+      </details>
+      <details>
+        <summary>What if I don't want to pay after the trial?</summary>
+        <p>The extension shows your existing data in read-only mode but actions stop working. Subscribe anytime to unlock — your workspaces, custom nests, and notes are all still there waiting.</p>
+      </details>
+      <details>
+        <summary>Can I get a refund?</summary>
+        <p>Yes — drop us an email within 7 days of paying. No questions, full refund.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-row">
+      <div>
+        <strong>🪺 TabNest</strong> — a quiet place for your tabs.
+      </div>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="https://github.com/Janhavi12800/tabnest" target="_blank" rel="noopener">Source</a>
+        <a href="#pricing">Buy Pro</a>
+      </div>
+    </div>
+    <div class="footer-bottom">Made with 🪶 in India</div>
+  </footer>
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="checkout.js"></script>
+</body>
+</html>

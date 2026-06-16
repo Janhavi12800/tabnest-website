@@ -1,0 +1,18 @@
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor configs
+.vscode/
+.idea/
+*.swp
+
+# Local environment & secrets
+.env
+.env.local
+secrets.json
+
+# Apps Script backup (never commit — your Razorpay secret is configured there)
+Code.gs
+appsscript.json

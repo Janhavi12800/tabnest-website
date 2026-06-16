@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TabNest preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg-main: #FBF5E6;
+      --bg-card: #FFFDF7;
+      --bg-accent: #F0E2C4;
+      --brown-primary: #8B6F47;
+      --brown-deep: #4A3424;
+      --text-dark: #3E2C1A;
+      --text-medium: #6B5A47;
+      --text-light: #A89684;
+      --border: #E8DBC2;
+      --gold: #D4A574;
+      --green: #7A9B7E;
+      --orange: #E07856;
+    }
+    html, body {
+      font-family: 'Quicksand', system-ui, sans-serif;
+      background: var(--bg-main);
+      color: var(--text-dark);
+      min-height: 100%;
+      padding: 18px;
+      overflow: hidden;
+      background-image:
+        radial-gradient(circle at 10% 10%, rgba(212, 165, 116, 0.12) 0%, transparent 35%),
+        radial-gradient(circle at 90% 80%, rgba(122, 155, 126, 0.10) 0%, transparent 40%);
+    }
+    .hero-card {
+      background: linear-gradient(135deg, #FFFDF7, #F0E2C4);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 16px 20px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .hero-logo {
+      font-size: 34px;
+      filter: drop-shadow(0 3px 6px rgba(107, 68, 35, 0.2));
+    }
+    .hero-title {
+      font-family: 'Caveat', cursive;
+      font-size: 34px;
+      color: var(--brown-deep);
+      font-weight: 700;
+      line-height: 1;
+    }
+    .hero-sub {
+      font-size: 11px;
+      color: var(--text-medium);
+      margin-top: 2px;
+      font-style: italic;
+    }
+    .stats {
+      margin-left: auto;
+      display: flex;
+      gap: 14px;
+    }
+    .stat-num {
+      font-family: 'Caveat', cursive;
+      font-size: 24px;
+      color: var(--brown-deep);
+      font-weight: 700;
+      line-height: 1;
+      text-align: center;
+    }
+    .stat-label {
+      font-size: 8px;
+      color: var(--text-medium);
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: 700;
+    }
+    .search {
+      width: 100%;
+      padding: 11px 16px 11px 38px;
+      border: 1.5px solid var(--border);
+      background: var(--bg-card);
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 12px;
+      color: var(--text-light);
+      position: relative;
+      margin-bottom: 14px;
+    }
+    .search-wrap {
+      position: relative;
+      margin-bottom: 14px;
+    }
+    .search-wrap::before {
+      content: '🔍';
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      opacity: 0.6;
+    }
+    .toolbar {
+      display: flex;
+      gap: 7px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .tbtn {
+      padding: 7px 14px;
+      background: var(--bg-card);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .tbtn.focus { background: linear-gradient(135deg, var(--bg-accent), #fff); border-color: var(--gold); }
+    .nest-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .nest {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 10px;
+      box-shadow: 0 3px 8px rgba(74, 56, 41, 0.06);
+    }
+    .nest-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed var(--border);
+      margin-bottom: 8px;
+    }
+    .nest-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .nest-icon.code { background: rgba(139, 111, 71, 0.18); }
+    .nest-icon.media { background: rgba(224, 120, 86, 0.18); }
+    .nest-icon.work { background: rgba(122, 155, 126, 0.18); }
+    .nest-icon.ai { background: rgba(142, 124, 195, 0.18); }
+    .nest-name {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    .nest-count {
+      font-size: 9px;
+      color: var(--text-medium);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .tab {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 7px;
+      border-radius: 7px;
+      font-size: 10.5px;
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+    .tab:hover { background: var(--bg-accent); }
+    .fav {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+    .fav.gh { background: #24292e; }
+    .fav.so { background: #f48024; }
+    .fav.yt { background: #ff0000; }
+    .fav.nf { background: #e50914; }
+    .fav.nt { background: #2e2e2e; }
+    .fav.fg { background: #f24e1e; }
+    .fav.cl { background: #d97a47; }
+    .fav.gp { background: #4285f4; }
+  </style>
+</head>
+<body>
+  <div class="hero-card">
+    <div class="hero-logo">🪺</div>
+    <div>
+      <div class="hero-title">TabNest</div>
+      <div class="hero-sub">a cozy little home for your tabs</div>
+    </div>
+    <div class="stats">
+      <div><div class="stat-num">24</div><div class="stat-label">tabs</div></div>
+      <div><div class="stat-num">5</div><div class="stat-label">nests</div></div>
+      <div><div class="stat-num">2</div><div class="stat-label">wks</div></div>
+    </div>
+  </div>
+
+  <div class="search-wrap">
+    <div class="search">Search every tab in every nest...</div>
+  </div>
+
+  <div class="toolbar">
+    <div class="tbtn">🪺 Re-nest all</div>
+    <div class="tbtn">✂️ Dedupe</div>
+    <div class="tbtn">🌿 Save</div>
+    <div class="tbtn">🍂 Sweep</div>
+    <div class="tbtn focus">🎯 Focus</div>
+  </div>
+
+  <div class="nest-grid">
+    <div class="nest">
+      <div class="nest-head">
+        <div class="nest-icon code">🪵</div>
+        <div>
+          <div class="nest-name">Code</div>
+          <div class="nest-count">8 tabs</div>
+        </div>
+      </div>
+      <div class="tab"><div class="fav gh"></div>github.com — anthropic/claude</div>
+      <div class="tab"><div class="fav so"></div>How to debounce in React?</div>
+      <div class="tab"><div class="fav gh"></div>Pull request #1247</div>
+      <div class="tab"><div class="fav so"></div>Tab groups MV3 API</div>
+    </div>
+    <div class="nest">
+      <div class="nest-head">
+        <div class="nest-icon media">🎬</div>
+        <div>
+          <div class="nest-name">Media</div>
+          <div class="nest-count">4 tabs</div>
+        </div>
+      </div>
+      <div class="tab"><div class="fav yt"></div>Lofi beats to focus to</div>
+      <div class="tab"><div class="fav yt"></div>Cozy cabin ambience 10h</div>
+      <div class="tab"><div class="fav nf"></div>Netflix — Continue watching</div>
+    </div>
+    <div class="nest">
+      <div class="nest-head">
+        <div class="nest-icon work">💼</div>
+        <div>
+          <div class="nest-name">Work</div>
+          <div class="nest-count">6 tabs</div>
+        </div>
+      </div>
+      <div class="tab"><div class="fav gp"></div>Inbox (3)</div>
+      <div class="tab"><div class="fav nt"></div>Notion — Q3 roadmap</div>
+      <div class="tab"><div class="fav fg"></div>Figma — homepage v2</div>
+      <div class="tab"><div class="fav gp"></div>Calendar — Mon 2:00pm</div>
+    </div>
+    <div class="nest">
+      <div class="nest-head">
+        <div class="nest-icon ai">🤖</div>
+        <div>
+          <div class="nest-name">AI</div>
+          <div class="nest-count">3 tabs</div>
+        </div>
+      </div>
+      <div class="tab"><div class="fav cl"></div>Claude — chat with TabNest</div>
+      <div class="tab"><div class="fav cl"></div>Claude — debug session</div>
+      <div class="tab"><div class="fav cl"></div>Perplexity research</div>
+    </div>
+  </div>
+</body>
+</html>

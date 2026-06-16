@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — TabNest</title>
+  <link rel="icon" href="assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-decor">
+    <svg class="leaf leaf-1" viewBox="0 0 60 60"><path d="M30 5 C 15 15 10 35 30 55 C 50 35 45 15 30 5 Z" fill="currentColor"/></svg>
+    <svg class="leaf leaf-2" viewBox="0 0 60 60"><path d="M30 5 C 15 15 10 35 30 55 C 50 35 45 15 30 5 Z" fill="currentColor"/></svg>
+  </div>
+
+  <header class="topbar">
+    <a class="logo" href="index.html">
+      <img src="assets/icon.png" alt="TabNest" width="36" height="36">
+      <span>TabNest</span>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#pricing">Pricing</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <h1>Privacy Policy</h1>
+    <p style="text-align: center; color: var(--text-light); font-style: italic;">Last updated: June 13, 2026</p>
+
+    <h2>The short version</h2>
+    <p>
+      TabNest stores everything on your computer. We don't run a tracking server, we don't sell anything to anyone,
+      and we don't even know how many tabs you have. The only data that ever leaves your machine is your purchase
+      email + activation code, and only when you're activating or re-verifying Pro.
+    </p>
+
+    <h2>What the extension reads (locally)</h2>
+    <p>To organise your tabs, TabNest reads from Chrome:</p>
+    <ul>
+      <li><strong>Tab URLs, titles, and favicons</strong> — to categorise tabs into nests.</li>
+      <li><strong>Tab group info</strong> — to place tabs into native Chrome groups.</li>
+      <li><strong>Tab activity timestamps</strong> — to detect stale tabs.</li>
+    </ul>
+    <p>
+      All of this stays on your computer in <code>chrome.storage.local</code>. None of it is transmitted anywhere by the extension.
+    </p>
+
+    <h2>What we store (locally)</h2>
+    <ul>
+      <li>Your saved <strong>workspaces</strong> (snapshots of URL + title lists you chose to save).</li>
+      <li>Your <strong>custom nests</strong> (categories you defined).</li>
+      <li>Your <strong>tab notes</strong> (text notes you wrote, keyed by URL).</li>
+      <li>Your <strong>theme preference</strong> and other settings.</li>
+      <li>Your <strong>TabNest Pro state</strong> (email, 6-digit code, last-verified timestamp) if you bought Pro.</li>
+    </ul>
+    <p>
+      You can export all of this to JSON at any time via Settings → Data → Export. You can delete all of it by uninstalling the extension.
+    </p>
+
+    <h2>What we transmit (only for Pro)</h2>
+    <p>
+      If — and only if — you purchase TabNest Pro:
+    </p>
+    <ul>
+      <li>
+        <strong>At purchase</strong>, the landing page sends Razorpay your payment details (handled entirely by Razorpay).
+        After payment, our server (Google Apps Script) records your email + Razorpay payment ID in a Google Sheet,
+        and emails you a 6-digit activation code.
+      </li>
+      <li>
+        <strong>At activation</strong>, the extension sends your email + 6-digit code to our server to verify it matches a paid purchase.
+      </li>
+      <li>
+        <strong>Every 7 days while Pro is active</strong>, the extension re-checks your email + code with the server.
+        This is a background check — no UI, no interruption.
+      </li>
+    </ul>
+    <p>
+      We never transmit tab URLs, titles, notes, workspaces, or any browsing data. Activation data
+      (email, payment ID, code, date) lives in our Google Sheet so we can verify purchases and offer support.
+    </p>
+
+    <h2>Third parties</h2>
+    <ul>
+      <li><strong>Razorpay</strong> — processes your payment. See <a href="https://razorpay.com/privacy/" target="_blank" rel="noopener">Razorpay's privacy policy</a>.</li>
+      <li><strong>Google (Apps Script, Sheets, Gmail)</strong> — runs our purchase server and sends activation emails. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a>.</li>
+      <li><strong>Google Fonts</strong> — the extension and landing page load fonts from fonts.googleapis.com.</li>
+    </ul>
+    <p>
+      We don't use Google Analytics, Facebook Pixel, Hotjar, or any other tracker.
+    </p>
+
+    <h2>What we don't do</h2>
+    <ul>
+      <li>We don't sell your data — there's nothing to sell.</li>
+      <li>We don't show ads.</li>
+      <li>We don't track your browsing.</li>
+      <li>We don't share data with anyone except Razorpay (for the payment itself).</li>
+    </ul>
+
+    <h2>Refunds and your right to delete</h2>
+    <p>
+      Email <a href="mailto:support@tabnest.app">support@tabnest.app</a> with your purchase email or payment ID and we'll:
+    </p>
+    <ul>
+      <li>Refund within 7 days, no questions asked.</li>
+      <li>Delete your row from our Google Sheet on request.</li>
+      <li>Re-send your activation code if you lost the email.</li>
+    </ul>
+
+    <h2>Changes</h2>
+    <p>
+      If we ever change this policy materially we'll update the date at the top and (for material changes) try to notify Pro users by email.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      <strong>Owner:</strong> Janhavi (Janhavi12800 on GitHub)<br>
+      <strong>Email:</strong> <a href="mailto:support@tabnest.app">support@tabnest.app</a><br>
+      <strong>Source:</strong> <a href="https://github.com/Janhavi12800/tabnest" target="_blank" rel="noopener">github.com/Janhavi12800/tabnest</a>
+    </p>
+
+    <div style="text-align: center; margin-top: 36px;">
+      <a href="index.html" class="cta ghost">← Back to home</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-row">
+      <div><strong>🪺 TabNest</strong> — a quiet place for your tabs.</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="https://github.com/Janhavi12800/tabnest" target="_blank" rel="noopener">Source</a>
+      </div>
+    </div>
+    <div class="footer-bottom">Made with 🪶 in India</div>
+  </footer>
+</body>
+</html>
