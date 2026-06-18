@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   } catch {}
 
-  btn.addEventListener('click', () => {
+  btn.addEventListener('click', async () => {
     if (!isConfigured()) {
       setStatus('Checkout isn\'t configured yet. Owner: see checkout.js TODOs.', '#C45C5C');
       return;
@@ -56,6 +56,32 @@ document.addEventListener('DOMContentLoaded', () => {
       emailInput?.focus();
       return;
     }
+
+    setStatus('Checking your email…');
+    btn.disabled = true;
+    try {
+      const check = await checkEmailStatus(email);
+      btn.disabled = false;
+
+      if (check && check.has_active_pro) {
+        const expires = check.expires_at ? new Date(check.expires_at).toLocaleDateString() : '';
+        setStatus(
+          `✓ You already have an active Pro subscription${expires ? ' (valid until ' + expires + ')' : ''}. ` +
+          `Open the TabNest extension → Sign in with this email + your 6-digit code. ` +
+          `Lost the code? Click "Already paid? Sign in" → "Lost your code? Resend" in the extension.`,
+          'var(--green)'
+        );
+        return;
+      }
+      if (check && check.has_active_trial) {
+        // Trial users can upgrade — proceed but mention it.
+        setStatus('You\'re on a trial — upgrading to a 1-year Pro subscription.', 'var(--brown-dark)');
+      }
+    } catch {
+      btn.disabled = false;
+      // If the check fails (network, etc.), don't block — just proceed to Razorpay.
+    }
+
     openRazorpay(email);
   });
 
@@ -75,6 +101,19 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   });
 });
+
+async function checkEmailStatus(email) {
+  try {
+    const url = new URL(APPS_SCRIPT_URL);
+    url.searchParams.set('action', 'check-email');
+    url.searchParams.set('email', email);
+    const res = await fetch(url.toString());
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
+  }
+}
 
 function openRazorpay(email) {
   setStatus('Opening secure checkout…');
