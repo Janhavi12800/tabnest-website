@@ -62,6 +62,18 @@ document.addEventListener('DOMContentLoaded', () => {
   emailInput?.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') btn.click();
   });
+
+  // "Already paid? Sign in" — show instructions modal
+  document.querySelector('#hero-signin')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    alert(
+      '✨ Sign in happens inside the extension:\n\n' +
+      '1. Open the TabNest extension (toolbar icon)\n' +
+      '2. Click "Already paid? Sign in →" on the welcome screen\n' +
+      '3. Enter your purchase email + 6-digit code\n\n' +
+      'Lost your code? Reply to any TabNest email — we\'ll resend it.'
+    );
+  });
 });
 
 function openRazorpay(email) {
@@ -71,7 +83,7 @@ function openRazorpay(email) {
     amount: PRICE_RUPEES * 100, // paisa
     currency: 'INR',
     name: 'TabNest Pro',
-    description: 'Lifetime Pro license · activation code emailed instantly',
+    description: '1-year Pro subscription · activation code emailed instantly',
     image: 'assets/icon-large.png',
     prefill: { email },
     notes: { product: 'tabnest-pro', email },

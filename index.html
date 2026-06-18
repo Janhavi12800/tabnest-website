@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TabNest — A cozy home for your tabs</title>
-  <meta name="description" content="A beautifully organised Chrome tab manager. Auto-groups tabs into smart nests, saves workspaces, and helps you focus. ₹100 one-time for Pro.">
+  <meta name="description" content="A beautifully organised Chrome tab manager. Auto-groups tabs into smart nests, saves workspaces, and helps you focus. ₹100 / year for Pro.">
   <link rel="icon" href="assets/icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,10 +39,23 @@
       <div class="hero-emoji">🪺</div>
       <h1 class="title">A cozy home for your tabs.</h1>
       <p class="subtitle">TabNest auto-organises every tab into beautiful smart nests so you can actually find what you opened.</p>
-      <div class="trial-pitch">🎁 <strong>7 days free</strong> · then <strong>₹100 lifetime</strong> · no subscription</div>
+      <div class="trial-pitch">🎁 <strong>7 days free</strong> · then <strong>₹100 / year</strong></div>
+
+      <div class="hero-buy-card">
+        <div class="hero-buy-grid">
+          <input type="email" id="buyer-email" placeholder="your email address" autocomplete="email" />
+          <button class="cta primary buy-btn" id="buy-btn">Buy Pro · ₹100/year</button>
+        </div>
+        <div id="status" class="buy-status"></div>
+        <div class="hero-buy-fine">
+          Pay securely via Razorpay (UPI · Card · Netbanking). Activation code emailed instantly.
+          <br><a class="hero-already-paid" href="#" id="hero-signin">Already paid? Sign in to your extension →</a>
+        </div>
+      </div>
+
       <div class="cta-row">
-        <a class="cta primary" href="#pricing">Start 7-day free trial</a>
         <a class="cta ghost" href="#features">See what it does →</a>
+        <a class="cta ghost" href="#pricing">Compare features →</a>
       </div>
       <div class="hero-screenshot">
         <div class="screenshot-frame">
@@ -110,13 +123,13 @@
           <div class="pricing-logo">🪺</div>
           <div>
             <div class="pricing-name">TabNest <span class="pro-badge">PRO</span></div>
-            <div class="pricing-desc">7-day trial · ₹100 lifetime · no subscription</div>
+            <div class="pricing-desc">7-day trial · ₹100 / year · cancel anytime</div>
           </div>
         </div>
         <div class="pricing-row">
           <div class="pricing-amount">
             <span class="rupee">₹</span><span class="amount">100</span>
-            <span class="pricing-period">one-time</span>
+            <span class="pricing-period">per year</span>
           </div>
           <ul class="pricing-list">
             <li>🎨 All 4 themes</li>
@@ -124,16 +137,12 @@
             <li>📝 Unlimited tab notes</li>
             <li>⏰ Focus mode + Pomodoro</li>
             <li>✨ Hero "PRO" badge</li>
-            <li>💝 Lifetime updates</li>
+            <li>💝 Every update included</li>
           </ul>
         </div>
-        <div class="buy-form">
-          <input type="email" id="buyer-email" placeholder="your email address" autocomplete="email" />
-          <button class="cta primary buy-btn" id="buy-btn">Buy Pro — ₹100</button>
-        </div>
-        <div id="status" class="buy-status"></div>
+        <a class="cta primary full-cta" href="#top">↑ Buy at the top of the page</a>
         <div class="pricing-fine">
-          We send your activation code to this email. No account, no password.<br>
+          We send your activation code to this email after payment. No account, no password.<br>
           Pay securely with Razorpay (UPI / Card / Netbanking).
         </div>
       </div>
@@ -146,8 +155,8 @@
         <p>Install TabNest, enter your email, paste the 6-digit code we send you. That's it — every feature is unlocked for 7 days. No credit card required upfront.</p>
       </details>
       <details>
-        <summary>Is it really a one-time payment?</summary>
-        <p>Yes. ₹100 once, Pro stays unlocked forever, on as many of your own browsers as you sign in to with the same email.</p>
+        <summary>How does the ₹100 / year billing work?</summary>
+        <p>You pay ₹100 once and Pro stays active for 365 days. After a year, you renew with another ₹100 payment to keep using Pro features. Use on as many of your own browsers as you sign in to with the same email.</p>
       </details>
       <details>
         <summary>Can I use it on multiple computers?</summary>
