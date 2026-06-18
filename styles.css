@@ -1,28 +1,28 @@
-/* TabNest landing page — cozy forest-nest theme */
+/* TabNest landing page — midnight theme */
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg-main: #FBF5E6;
-  --bg-soft: #F7EFDB;
-  --bg-card: #FFFDF7;
-  --bg-card-hover: #F5E6CB;
-  --bg-accent: #F0E2C4;
-  --brown-primary: #8B6F47;
-  --brown-dark: #6B4423;
-  --brown-deep: #4A3424;
-  --text-dark: #3E2C1A;
-  --text-medium: #6B5A47;
-  --text-light: #A89684;
-  --border: #E8DBC2;
-  --gold: #D4A574;
-  --gold-soft: #E8C896;
-  --green: #7A9B7E;
-  --orange: #E07856;
-  --berry: #C45C5C;
-  --shadow: rgba(74, 56, 41, 0.08);
-  --shadow-md: rgba(74, 56, 41, 0.18);
-  --shadow-lg: rgba(74, 56, 41, 0.28);
+  --bg-main: #161A2E;
+  --bg-soft: #1E2342;
+  --bg-card: #232847;
+  --bg-card-hover: #2D3358;
+  --bg-accent: #353C66;
+  --brown-primary: #D4A574;
+  --brown-dark: #E8C896;
+  --brown-deep: #F4D58D;
+  --text-dark: #ECE6D5;
+  --text-medium: #B2AB99;
+  --text-light: #757062;
+  --border: #353C66;
+  --gold: #F4D58D;
+  --gold-soft: #FFE5A8;
+  --green: #9CC4A2;
+  --orange: #FF9978;
+  --berry: #E07A8A;
+  --shadow: rgba(0, 0, 0, 0.30);
+  --shadow-md: rgba(0, 0, 0, 0.45);
+  --shadow-lg: rgba(0, 0, 0, 0.60);
 }
 
 html, body {
@@ -36,9 +36,9 @@ html, body {
 
 body {
   background-image:
-    radial-gradient(circle at 10% 10%, rgba(212, 165, 116, 0.14) 0%, transparent 40%),
-    radial-gradient(circle at 90% 30%, rgba(122, 155, 126, 0.10) 0%, transparent 40%),
-    radial-gradient(circle at 50% 95%, rgba(224, 120, 86, 0.08) 0%, transparent 45%);
+    radial-gradient(circle at 10% 10%, rgba(212, 165, 116, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 30%, rgba(156, 196, 162, 0.07) 0%, transparent 40%),
+    radial-gradient(circle at 50% 95%, rgba(255, 153, 120, 0.05) 0%, transparent 45%);
   background-attachment: fixed;
 }
 
@@ -77,7 +77,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 14px 32px;
-  background: rgba(251, 245, 230, 0.88);
+  background: rgba(22, 26, 46, 0.88);
   backdrop-filter: blur(8px);
   border-bottom: 1px dashed var(--border);
 }

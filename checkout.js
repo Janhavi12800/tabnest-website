@@ -6,7 +6,7 @@
 //   2. APPS_SCRIPT_URL — the Web App URL from your Apps Script deployment.
 
 const RAZORPAY_KEY_ID = 'rzp_live_T1ALXI1GZ9zE9Y';
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz9o5rAEvkx_u3nACk62VUnsi9RDFMVzPQ_nBc86OJZEaCVYl568SMnJEv_lx4j5g10/exec';
+const APPS_SCRIPT_URL = 'https://tabnest-backend.janhavirawat25.workers.dev/';
 
 const PRICE_RUPEES = 100;
 
